@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180426 21:55:40.592" generator="Robot 3.0.3rc1 (Python 2.7.15rc1 on linux2)">
+<suite source="/home/estanqueiro/projects/orangehrm/Tests/orangehrm.robot" id="s1" name="Orangehrm">
+<test id="s1-t1" name="Deve logar como admin">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180426 21:55:40.666" level="INFO">Opening browser 'firefox' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20180426 21:55:44.275" starttime="20180426 21:55:40.665"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180426 21:55:44.389" starttime="20180426 21:55:44.276"></status>
+</kw>
+<status status="PASS" endtime="20180426 21:55:44.389" starttime="20180426 21:55:40.665"></status>
+</kw>
+<kw name="Login" library="OrangehrmApp">
+<arguments>
+<arg>${LOGIN_USER_ADMIN}</arg>
+<arg>${LOGIN_PASSWORD_ADMIN}</arg>
+</arguments>
+<kw name="Load" library="Loginpage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20180426 21:55:44.391" level="INFO">Opening url 'http://opensource.demo.orangehrmlive.com/'</msg>
+<status status="PASS" endtime="20180426 21:55:46.240" starttime="20180426 21:55:44.390"></status>
+</kw>
+<status status="PASS" endtime="20180426 21:55:46.240" starttime="20180426 21:55:44.390"></status>
+</kw>
+<kw name="Verify Page Loaded" library="Loginpage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>LOGIN Panel</arg>
+</arguments>
+<status status="PASS" endtime="20180426 21:55:46.261" starttime="20180426 21:55:46.240"></status>
+</kw>
+<status status="PASS" endtime="20180426 21:55:46.261" starttime="20180426 21:55:46.240"></status>
+</kw>
+<kw name="Login With Valid Credentials" library="Loginpage">
+<arguments>
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+</arguments>
+<kw name="Fill &quot;Username&quot; Field" library="Loginpage">
+<arguments>
+<arg>${Username}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20180426 21:55:46.266" level="INFO">Typing text 'admin' into text field 'id=txtUsername'</msg>
+<status status="PASS" endtime="20180426 21:55:46.323" starttime="20180426 21:55:46.266"></status>
+</kw>
+<status status="PASS" endtime="20180426 21:55:46.323" starttime="20180426 21:55:46.262"></status>
+</kw>
+<kw name="Fill &quot;Password&quot; Field" library="Loginpage">
+<arguments>
+<arg>${Password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20180426 21:55:46.324" level="INFO">Typing text 'admin' into text field 'id=txtPassword'</msg>
+<status status="PASS" endtime="20180426 21:55:46.375" starttime="20180426 21:55:46.323"></status>
+</kw>
+<status status="PASS" endtime="20180426 21:55:46.375" starttime="20180426 21:55:46.323"></status>
+</kw>
+<kw name="Click &quot;Sign In&quot; Button" library="Loginpage">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20180426 21:55:46.376" level="INFO">Clicking button 'id=btnLogin'.</msg>
+<status status="PASS" endtime="20180426 21:55:48.065" starttime="20180426 21:55:46.375"></status>
+</kw>
+<status status="PASS" endtime="20180426 21:55:48.066" starttime="20180426 21:55:46.375"></status>
+</kw>
+<status status="PASS" endtime="20180426 21:55:48.066" starttime="20180426 21:55:46.261"></status>
+</kw>
+<status status="PASS" endtime="20180426 21:55:48.066" starttime="20180426 21:55:44.390"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180426 21:55:48.320" starttime="20180426 21:55:48.067"></status>
+</kw>
+<status status="PASS" endtime="20180426 21:55:48.320" starttime="20180426 21:55:48.066"></status>
+</kw>
+<status status="PASS" endtime="20180426 21:55:48.320" critical="yes" starttime="20180426 21:55:40.664"></status>
+</test>
+<doc>Esta suite representa os testes do DEMOCENTER para a aplicação web OrangeHRM</doc>
+<status status="PASS" endtime="20180426 21:55:48.321" starttime="20180426 21:55:40.593"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Orangehrm" pass="1">Orangehrm</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
